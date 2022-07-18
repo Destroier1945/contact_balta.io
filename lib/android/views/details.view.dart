@@ -1,3 +1,4 @@
+import 'package:contact/android/views/address.view.dart';
 import 'package:contact/android/views/editor-contact.view.dart';
 import 'package:contact/models/contact.model.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +81,12 @@ class DetailsView extends StatelessWidget {
               ],
             ),
             isThreeLine: true,
-            trailing: TextButton(onPressed: () {  },
+            trailing: TextButton(onPressed: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AddressView(),
+                ),
+              );
+            },
               child: Icon(Icons.pin_drop, color: Theme.of(context).primaryColor,),
             ),
           ),
@@ -96,7 +102,9 @@ class DetailsView extends StatelessWidget {
                 email:  "kluge23@gmail.com",
                 phone: "41 999531-5981",
               ),
-            ),),);
+            ),
+            ),
+          );
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.edit),
